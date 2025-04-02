@@ -4,3 +4,6 @@
 [submodule "SoftEng2"]
 	path = SoftEng2
 	url = https://github.com/MarySymFairy/SEII-Reservio.git
+[submodule "DB_ece_auth_2024"]
+	path = DB_ece_auth_2024
+	url = https://github.com/MarySymFairy/DB_ece_auth_2024.git
