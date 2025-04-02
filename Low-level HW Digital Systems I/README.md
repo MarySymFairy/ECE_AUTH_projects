@@ -1,4 +1,8 @@
-# HW1: Verilog Simulation Project
+# Low-level HW Digital Systems I 
+
+## 7th Semester, Aristotle University of Thessaloniki, 2023-2024
+
+## Verilog Simulation Project
 
 ### Overview
 
