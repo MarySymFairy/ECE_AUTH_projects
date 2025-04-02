@@ -1,0 +1,6 @@
+SELECT neurotransmitters.neurotransmitterName, emitted_neurotransmitters.concentration
+FROM experiments
+JOIN activated_neurons ON experiments.experimentID = activated_neurons.experimentID
+JOIN emitted_neurotransmitters ON activated_neurons.activationID = emitted_neurotransmitters.activationID
+JOIN neurotransmitters ON emitted_neurotransmitters.neurotransmitterID = neurotransmitters.neurotransmitterID
+WHERE experiments.experimentID = 5012;

@@ -1,0 +1,967 @@
+openapi: 3.0.0
+info:
+  title: Neurosync API
+  description: API for managing NeuroSync database entities and their relationships
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Local server
+paths:
+  /stimuli:
+    get:
+      summary: Get all stimuli
+      operationId: stimuliGET
+      responses:
+        "200":
+          description: A list of stimuli.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Stimulus'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new stimulus
+      operationId: stimuliPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Stimulus'
+        required: true
+      responses:
+        "201":
+          description: Stimulus created.
+      x-swagger-router-controller: Default
+  /stimuli/{stimulusID}:
+    get:
+      summary: Get a specific stimulus by ID
+      operationId: stimuliStimulusIDGET
+      parameters:
+      - name: stimulusID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Stimulus details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Stimulus'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a stimulus by ID
+      operationId: stimuliStimulusIDPUT
+      parameters:
+      - name: stimulusID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Stimulus'
+        required: true
+      responses:
+        "200":
+          description: Stimulus updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a stimulus by ID
+      operationId: stimuliStimulusIDDELETE
+      parameters:
+      - name: stimulusID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Stimulus deleted.
+      x-swagger-router-controller: Default
+  /subjects:
+    get:
+      summary: Get all subjects
+      operationId: subjectsGET
+      responses:
+        "200":
+          description: A list of subjects.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Subject'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new subject
+      operationId: subjectsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subject'
+        required: true
+      responses:
+        "201":
+          description: Subject created.
+      x-swagger-router-controller: Default
+  /subjects/{subjectID}:
+    get:
+      summary: Get a specific subject by ID
+      operationId: subjectsSubjectIDGET
+      parameters:
+      - name: subjectID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Subject details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subject'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a subject by ID
+      operationId: subjectsSubjectIDPUT
+      parameters:
+      - name: subjectID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subject'
+        required: true
+      responses:
+        "200":
+          description: Subject updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a subject by ID
+      operationId: subjectsSubjectIDDELETE
+      parameters:
+      - name: subjectID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Subject deleted.
+      x-swagger-router-controller: Default
+  /experiments:
+    get:
+      summary: Get all experiments
+      operationId: experimentsGET
+      responses:
+        "200":
+          description: A list of experiments.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Experiment'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new experiment
+      operationId: experimentsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Experiment'
+        required: true
+      responses:
+        "201":
+          description: Experiment created.
+      x-swagger-router-controller: Default
+  /experiments/{experimentID}:
+    get:
+      summary: Get a specific experiment by ID
+      operationId: experimentsExperimentIDGET
+      parameters:
+      - name: experimentID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Experiment details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Experiment'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update an experiment by ID
+      operationId: experimentsExperimentIDPUT
+      parameters:
+      - name: experimentID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Experiment'
+        required: true
+      responses:
+        "200":
+          description: Experiment updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete an experiment by ID
+      operationId: experimentsExperimentIDDELETE
+      parameters:
+      - name: experimentID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Experiment deleted.
+      x-swagger-router-controller: Default
+  /experiment-results:
+    get:
+      summary: Get all experiment results
+      operationId: experiment_resultsGET
+      responses:
+        "200":
+          description: A list of experiment results.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExperimentResult'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new experiment result
+      operationId: experiment_resultsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExperimentResult'
+        required: true
+      responses:
+        "201":
+          description: Experiment result created.
+      x-swagger-router-controller: Default
+  /experiment-results/{resultID}:
+    get:
+      summary: Get a specific experiment result by ID
+      operationId: experiment_resultsResultIDGET
+      parameters:
+      - name: resultID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Experiment result details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExperimentResult'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update an experiment result by ID
+      operationId: experiment_resultsResultIDPUT
+      parameters:
+      - name: resultID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExperimentResult'
+        required: true
+      responses:
+        "200":
+          description: Experiment result updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete an experiment result by ID
+      operationId: experiment_resultsResultIDDELETE
+      parameters:
+      - name: resultID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Experiment result deleted.
+      x-swagger-router-controller: Default
+  /brain-regions:
+    get:
+      summary: Get all brain regions
+      operationId: brain_regionsGET
+      responses:
+        "200":
+          description: A list of brain regions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BrainRegion'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new brain region
+      operationId: brain_regionsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BrainRegion'
+        required: true
+      responses:
+        "201":
+          description: Brain region created.
+      x-swagger-router-controller: Default
+  /brain-regions/{regionID}:
+    get:
+      summary: Get a specific brain region by ID
+      operationId: brain_regionsRegionIDGET
+      parameters:
+      - name: regionID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Brain region details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BrainRegion'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a brain region by ID
+      operationId: brain_regionsRegionIDPUT
+      parameters:
+      - name: regionID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BrainRegion'
+        required: true
+      responses:
+        "200":
+          description: Brain region updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a brain region by ID
+      operationId: brain_regionsRegionIDDELETE
+      parameters:
+      - name: regionID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Brain region deleted.
+      x-swagger-router-controller: Default
+  /neurons:
+    get:
+      summary: Get all neurons
+      operationId: neuronsGET
+      responses:
+        "200":
+          description: A list of neurons.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Neuron'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new neuron
+      operationId: neuronsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Neuron'
+        required: true
+      responses:
+        "201":
+          description: Neuron created.
+      x-swagger-router-controller: Default
+  /neurons/{neuronID}:
+    get:
+      summary: Get a specific neuron by ID
+      operationId: neuronsNeuronIDGET
+      parameters:
+      - name: neuronID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Neuron details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Neuron'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a neuron by ID
+      operationId: neuronsNeuronIDPUT
+      parameters:
+      - name: neuronID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Neuron'
+        required: true
+      responses:
+        "200":
+          description: Neuron updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a neuron by ID
+      operationId: neuronsNeuronIDDELETE
+      parameters:
+      - name: neuronID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Neuron deleted.
+      x-swagger-router-controller: Default
+  /neurotransmitters:
+    get:
+      summary: Get all neurotransmitters
+      operationId: neurotransmittersGET
+      responses:
+        "200":
+          description: A list of neurotransmitters.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Neurotransmitter'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new neurotransmitter
+      operationId: neurotransmittersPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Neurotransmitter'
+        required: true
+      responses:
+        "201":
+          description: Neurotransmitter created.
+      x-swagger-router-controller: Default
+  /neurotransmitters/{neurotransmitterID}:
+    get:
+      summary: Get a specific neurotransmitter by ID
+      operationId: neurotransmittersNeurotransmitterIDGET
+      parameters:
+      - name: neurotransmitterID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Neurotransmitter details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Neurotransmitter'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a neurotransmitter by ID
+      operationId: neurotransmittersNeurotransmitterIDPUT
+      parameters:
+      - name: neurotransmitterID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Neurotransmitter'
+        required: true
+      responses:
+        "200":
+          description: Neurotransmitter updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a neurotransmitter by ID
+      operationId: neurotransmittersNeurotransmitterIDDELETE
+      parameters:
+      - name: neurotransmitterID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Neurotransmitter deleted.
+      x-swagger-router-controller: Default
+  /synapses:
+    get:
+      summary: Get all synapses
+      operationId: synapsesGET
+      responses:
+        "200":
+          description: A list of synapses.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Synapse'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new synapse
+      operationId: synapsesPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Synapse'
+        required: true
+      responses:
+        "201":
+          description: Synapse created.
+      x-swagger-router-controller: Default
+  /synapses/{synapseID}:
+    get:
+      summary: Get a specific synapse by ID
+      operationId: synapsesSynapseIDGET
+      parameters:
+      - name: synapseID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Synapse details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Synapse'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a synapse by ID
+      operationId: synapsesSynapseIDPUT
+      parameters:
+      - name: synapseID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Synapse'
+        required: true
+      responses:
+        "200":
+          description: Synapse updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a synapse by ID
+      operationId: synapsesSynapseIDDELETE
+      parameters:
+      - name: synapseID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Synapse deleted.
+      x-swagger-router-controller: Default
+  /activated-neurons:
+    get:
+      summary: Get all activated neurons
+      operationId: activated_neuronsGET
+      responses:
+        "200":
+          description: A list of activated neurons.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ActivatedNeuron'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new activated neuron
+      operationId: activated_neuronsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivatedNeuron'
+        required: true
+      responses:
+        "201":
+          description: Activated neuron created.
+      x-swagger-router-controller: Default
+  /activated-neurons/{activationID}:
+    get:
+      summary: Get a specific activated neuron by ID
+      operationId: activated_neuronsActivationIDGET
+      parameters:
+      - name: activationID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Activated neuron details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActivatedNeuron'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update an activated neuron by ID
+      operationId: activated_neuronsActivationIDPUT
+      parameters:
+      - name: activationID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivatedNeuron'
+        required: true
+      responses:
+        "200":
+          description: Activated neuron updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete an activated neuron by ID
+      operationId: activated_neuronsActivationIDDELETE
+      parameters:
+      - name: activationID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Activated neuron deleted.
+      x-swagger-router-controller: Default
+  /emitted-neurotransmitters:
+    get:
+      summary: Get all emitted neurotransmitters
+      operationId: emitted_neurotransmittersGET
+      responses:
+        "200":
+          description: A list of emitted neurotransmitters.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmittedNeurotransmitter'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new emitted neurotransmitter
+      operationId: emitted_neurotransmittersPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmittedNeurotransmitter'
+        required: true
+      responses:
+        "201":
+          description: Emitted neurotransmitter created.
+      x-swagger-router-controller: Default
+  /emitted-neurotransmitters/{emissionID}:
+    get:
+      summary: Get a specific emitted neurotransmitter by ID
+      operationId: emitted_neurotransmittersEmissionIDGET
+      parameters:
+      - name: emissionID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Emitted neurotransmitter details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmittedNeurotransmitter'
+      x-swagger-router-controller: Default
+    put:
+      summary: Update an emitted neurotransmitter by ID
+      operationId: emitted_neurotransmittersEmissionIDPUT
+      parameters:
+      - name: emissionID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmittedNeurotransmitter'
+        required: true
+      responses:
+        "200":
+          description: Emitted neurotransmitter updated.
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete an emitted neurotransmitter by ID
+      operationId: emitted_neurotransmittersEmissionIDDELETE
+      parameters:
+      - name: emissionID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Emitted neurotransmitter deleted.
+      x-swagger-router-controller: Default
+components:
+  schemas:
+    Stimulus:
+      type: object
+      properties:
+        stimulusID:
+          type: integer
+        type:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        intensityOrDose:
+          type: number
+    Subject:
+      type: object
+      properties:
+        subjectID:
+          type: integer
+        species:
+          type: string
+        age:
+          type: integer
+        gender:
+          type: string
+    Experiment:
+      type: object
+      properties:
+        experimentID:
+          type: integer
+        subjectID:
+          type: integer
+        stimulusID:
+          type: integer
+        dateTime:
+          type: string
+        observation:
+          type: string
+    ExperimentResult:
+      type: object
+      properties:
+        resultID:
+          type: integer
+        experimentID:
+          type: integer
+        resultDescription:
+          type: string
+        significanceScore:
+          type: number
+    BrainRegion:
+      type: object
+      properties:
+        regionID:
+          type: integer
+        regionName:
+          type: string
+        function:
+          type: string
+        description:
+          type: string
+    Neuron:
+      type: object
+      properties:
+        neuronID:
+          type: integer
+        regionID:
+          type: integer
+        type:
+          type: string
+        thresholdPotential:
+          type: number
+    Neurotransmitter:
+      type: object
+      properties:
+        neurotransmitterID:
+          type: integer
+        name:
+          type: string
+        effectType:
+          type: string
+        description:
+          type: string
+    Synapse:
+      type: object
+      properties:
+        synapseID:
+          type: integer
+        preSynapticNeuronID:
+          type: integer
+        postSynapticNeuronID:
+          type: integer
+        strength:
+          type: number
+    ActivatedNeuron:
+      type: object
+      properties:
+        activationID:
+          type: integer
+        neuronID:
+          type: integer
+        experimentID:
+          type: integer
+        duration:
+          type: number
+        activationStrength:
+          type: number
+    EmittedNeurotransmitter:
+      type: object
+      properties:
+        emissionID:
+          type: integer
+        activationID:
+          type: integer
+        neurotransmitterID:
+          type: integer
+        concentration:
+          type: number
