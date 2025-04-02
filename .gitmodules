@@ -1,6 +1,3 @@
-[submodule "SoftEng1"]
-	path = SoftEng1
-	url = https://github.com/MarySymFairy/SoftEng1_ece_auth_2024.git
 [submodule "SoftEng2"]
 	path = SoftEng2
 	url = https://github.com/MarySymFairy/SEII-Reservio.git
