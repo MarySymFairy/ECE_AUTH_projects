@@ -10,3 +10,6 @@
 [submodule "HW1_ece_auth_2024"]
 	path = HW1_ece_auth_2024
 	url = https://github.com/MarySymFairy/HW1_ece_auth_2024.git
+[submodule "Probability_and_Statistics_ece_auth_2023"]
+	path = Probability_and_Statistics_ece_auth_2023
+	url = https://github.com/MarySymFairy/Probability_and_Statistics_ece_auth_2023.git
