@@ -1,0 +1,117 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Maria Mamougiorgi, mmamougi, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\MicroLAB\Lab3\uart_read_write_prjct\uart_read_write_prjct.uvprojx
+Project File Date:  06/07/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+compiling queue.c...
+compiling i2c.c...
+compiling leds.c...
+drivers/comparator.c(2): warning: In file included from...
+drivers/comparator.h(6): warning: In file included from...
+drivers/adc.h(10): warning: 'ADC1_BASE' macro redefined [-Wmacro-redefined]
+   10 | #define ADC1_BASE             (APB2PERIPH_BASE + 0x2000)
+      |         ^
+C:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h(678): note: previous definition is here
+  678 | #define ADC1_BASE             (APB2PERIPH_BASE + 0x2000UL)
+      |         ^
+drivers/comparator.c(2): warning: In file included from...
+drivers/comparator.h(6): warning: In file included from...
+drivers/adc.h(23): warning: 'GPIOA_BASE' macro redefined [-Wmacro-redefined]
+   23 | #define GPIOA_BASE            (AHB1PERIPH_BASE + 0x0000)
+      |         ^
+C:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h(693): note: previous definition is here
+  693 | #define GPIOA_BASE            (AHB1PERIPH_BASE + 0x0000UL)
+      |         ^
+drivers/comparator.c(15): warning: GCC does not allow variable declarations in for loop initializers before C99 [-Wgcc-compat]
+   15 |         for (int i=0; i < 1000;i++);
+      |              ^
+3 warnings generated.
+compiling comparator.c...
+compiling main.c...
+compiling gpio.c...
+drivers/adc.c(3): warning: In file included from...
+drivers/adc.h(10): warning: 'ADC1_BASE' macro redefined [-Wmacro-redefined]
+   10 | #define ADC1_BASE             (APB2PERIPH_BASE + 0x2000)
+      |         ^
+C:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h(678): note: previous definition is here
+  678 | #define ADC1_BASE             (APB2PERIPH_BASE + 0x2000UL)
+      |         ^
+drivers/adc.c(3): warning: In file included from...
+drivers/adc.h(23): warning: 'GPIOA_BASE' macro redefined [-Wmacro-redefined]
+   23 | #define GPIOA_BASE            (AHB1PERIPH_BASE + 0x0000)
+      |         ^
+C:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h(693): note: previous definition is here
+  693 | #define GPIOA_BASE            (AHB1PERIPH_BASE + 0x0000UL)
+      |         ^
+2 warnings generated.
+compiling adc.c...
+compiling stm32f4xx_adc.c...
+compiling stm32f4xx_gpio.c...
+compiling stm32f4xx_i2c.c...
+compiling timer.c...
+compiling uart.c...
+compiling stm32f4xx_usart.c...
+compiling stm32f4xx_rcc.c...
+compiling system_stm32f4xx.c...
+compiling delay.c...
+linking...
+Program Size: Code=17532 RO-data=1168 RW-data=8 ZI-data=1816  
+".\Objects\uart_read_write_prjct.axf" - 0 Error(s), 5 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil::STM32F4xx_DFP@2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  C:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: Keil::Device:Startup@2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F411xx_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f411xe.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

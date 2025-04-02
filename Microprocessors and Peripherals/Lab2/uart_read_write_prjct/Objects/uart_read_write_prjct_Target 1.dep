@@ -1,0 +1,210 @@
+Dependencies for Project 'uart_read_write_prjct', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6210000::V6.21::ARMCLANG
+F (.\main.c)(0x66548224)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/main.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.hKrivers\uart.h_rivers\queue.h)(0x00000000)
+I (drivers\gpio.h\rivers\timer.h)(0x00000000)
+F (.\drivers\adc.c)(0x6246D925)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/adc.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.herivers\adc.h)(0x00000000)
+I (drivers\stm32f4xx_adc.h)(0x57616B12)
+F (.\drivers\adc.h)(0x57B5D004)()
+F (.\drivers\comparator.c)(0x6246D987)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/comparator.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\comparator.htrivers\adc.hPrivers\stm32f4xx_adc.h)(0x00000000)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6569F662)
+F (.\drivers\comparator.h)(0x6246D987)()
+F (.\drivers\gpio.c)(0x6246D93A)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/gpio.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\gpio.h)(0x6246D943)
+F (.\drivers\gpio.h)(0x6246D943)()
+F (.\drivers\i2c.c)(0x6246D951)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/i2c.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\stm32f4xx_i2c.hLrivers\STM32F4xx_RCC.h)(0x00000000)
+I (drivers\STM32F4xx_GPIO.h)(0x57616B12)
+F (.\drivers\i2c.h)(0x5739E7F2)()
+F (.\drivers\leds.c)(0x6407038C)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/leds.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\gpio.h\rivers\leds.h)(0x00000000)
+F (.\drivers\leds.h)(0x57693886)()
+F (.\drivers\platform.h)(0x57B2C0A4)()
+F (.\drivers\queue.c)(0x576939CC)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/queue.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6569F662)
+F (.\drivers\queue.h)(0x576939C2)()
+F (.\drivers\stm32f4xx_adc.c)(0x57616B12)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/stm32f4xx_adc.o -MD)
+I (drivers\stm32f4xx_adc.h)(0x57616B12)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\stm32f4xx_rcc.h)(0x57616B12)
+F (.\drivers\stm32f4xx_adc.h)(0x57616B12)()
+F (.\drivers\stm32f4xx_gpio.c)(0x57616B12)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/stm32f4xx_gpio.o -MD)
+I (drivers\stm32f4xx_rcc.h)(0x57616B12)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\stm32f4xx_gpio.h)(0x57616B12)
+F (.\drivers\stm32f4xx_gpio.h)(0x57616B12)()
+F (.\drivers\stm32f4xx_i2c.c)(0x57616B12)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/stm32f4xx_i2c.o -MD)
+I (drivers\stm32f4xx_i2c.h)(0x57616B12)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\stm32f4xx_rcc.h)(0x57616B12)
+F (.\drivers\stm32f4xx_i2c.h)(0x57616B12)()
+F (.\drivers\stm32f4xx_rcc.c)(0x57616B12)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/stm32f4xx_rcc.o -MD)
+I (drivers\stm32f4xx_rcc.h)(0x57616B12)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+F (.\drivers\stm32f4xx_rcc.h)(0x57616B12)()
+F (.\drivers\stm32f4xx_usart.c)(0x57616B12)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/stm32f4xx_usart.o -MD)
+I (drivers\stm32f4xx_rcc.h)(0x57616B12)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\stm32f4xx_usart.h)(0x57616B12)
+F (.\drivers\stm32f4xx_usart.h)(0x57616B12)()
+F (.\drivers\timer.c)(0x64049177)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/timer.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\timer.h)(0x57B2BEC4)
+F (.\drivers\timer.h)(0x57B2BEC4)()
+F (.\drivers\uart.c)(0x6246D911)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/uart.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\uart.h\rivers\STM32F4xx_RCC.hsrivers\STM32F4xx_USART.h)(0x00000000)
+I (drivers\STM32F4xx_GPIO.h)(0x57616B12)
+F (.\drivers\uart.h)(0x5739E82A)()
+F (.\drivers\delay.c)(0x646E1C21)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/delay.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\STM32F4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
+I (drivers\delay.h)(0x646E1CC3)
+F (.\drivers\delay.h)(0x646E1CC3)()
+F (.\drivers\delay_as.s)(0x646E1D02)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 539" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F411xE SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/delay_as.o)
+F (RTE/Device/STM32F411RETx/startup_stm32f411xe.s)(0x6374AC5A)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 539" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F411xE SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f411xe.o)
+F (RTE/Device/STM32F411RETx/system_stm32f4xx.c)(0x6374AC5A)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./drivers-I./RTE/_Target_1-IC:/Users/mmamo/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include-IC:/Users/mmamo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/system_stm32f4xx.o -MD)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x660E7F5F)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\core_cm4.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_version.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\cmsis_compiler.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\cmsis_armclang_m.h)(0x660E7ECF)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x6569F660)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include\m-profile\armv7m_mpu.h)(0x660E7ECF)
+I (C:\Users\mmamo\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x660E7F5F)
