@@ -1,0 +1,44 @@
+{
+  "name": "reservio-api",
+  "version": "1.0.0",
+  "description": "The backend of Reservio for SE-II AUTH course",
+  "repository": "github:MarySymFairy/SEII-Reservio",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js",
+    "dev": "nodemon index.js --watch .",
+    "test": "c8 ava",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "ava": {
+    "timeout": "1m",
+    "verbose": true
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "ava": "^5.3.1",
+    "c8": "^8.0.1",
+    "cypress": "^13.17.0",
+    "got": "^11.8.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "busboy": "^1.6.0",
+    "connect": "^3.2.0",
+    "dicer": "^0.3.1",
+    "js-yaml": "^3.3.0",
+    "multer": "^1.4.5-lts.1",
+    "oas3-tools": "^2.2.3",
+    "qs": "^6.13.1",
+    "test-listen": "^1.1.0"
+  }
+}

@@ -1,0 +1,860 @@
+openapi: 3.0.0
+info:
+  title: RESERVIO API
+  description: Software Engineering II Course Reservio API
+  contact: {}
+  version: 1.0.0
+paths:
+  /businesses:
+    get:
+      tags:
+      - business
+      description: |
+        FR1: The logged in user must be able to view the businesses that are included in the system divided by categories.
+      operationId: getBusinessesByCategory
+      parameters:
+      - name: categoryName
+        in: query
+        description: The name of the category that the business belongs to.
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: string
+          enum:
+          - breakfast
+          - brunch
+          - lunch
+          - dinner
+          - drinks
+      responses:
+        "200":
+          description: A list of businesses in the specified category.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Business'
+                x-content-type: application/json
+        "400":
+          description: Bad input parameter
+        "404":
+          description: Business not found        
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+  /businesses/search:
+    get:
+      tags:
+      - business
+      description: "FR2: The logged in user must be able to search for a business\
+        \ with a keyword. \n"
+      operationId: searchBusinessByKeyword
+      parameters:
+      - name: keyword
+        in: query
+        description: The keyword to search for businesses.
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of businesses matching the searched keyword
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Business'
+                x-content-type: application/json
+        "400":
+          description: Bad input parameter     
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+  /reservations/availability:
+    get:
+      description: |
+        In order to have the available hours for the specific reservation you want to create.
+         FR3: The logged in user must be able to start a reservation process by selecting a business
+         FR5: The logged in user must be able to select an available hour for his reservation.
+      operationId: getAvailability
+      parameters:
+      - name: businessId
+        in: query
+        description: BusinessId of the business that the reservation is made for
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      - name: reservationDay
+        in: query
+        description: The arranged reservation day
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 31
+      - name: reservationMonth
+        in: query
+        description: The arranged reservation month
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 12
+      - name: reservationYear
+        in: query
+        description: The arranged reservation year
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 2024
+      - name: numberOfPeople
+        in: query
+        description: The arranged number of people that will be in the reservation
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 100
+      responses:
+        "200":
+          description: "A list of reservation hours matching the reservation details\
+            \ provided (business, date, people)"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: Bad input parameter     
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+  /reservations:
+    get:
+      tags:
+      - reservation
+      description: |
+        FR10: The logged in user must be able to view his reservations.
+      operationId: viewReservations
+      parameters:
+      - name: userId
+        in: query
+        description: UserId of the logged in user that made the reservation
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      responses:
+        "200":
+          description: An array with the reservations made by that logged in user
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reservation'
+                x-content-type: application/json
+        "400":
+          description: Bad input parameter
+        "404":
+          description: No reservations found        
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+    post:
+      tags:
+      - reservation
+      description: |
+        FR4: The logged in user must be able to set his reservation details in the selected business. FR6: The logged in user must be able to submit his reservation in the system. FR5: The logged in user must be able to select an available hour for his reservation.
+      operationId: addReservation
+      parameters:
+      - name: userId
+        in: query
+        description: UserId of the logged in user that made the reservation
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      - name: businessId
+        in: query
+        description: BusinessId of the business that the reservation is made for
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      requestBody:
+        description: Submit reservation to the system
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reservation'
+        required: true
+      responses:
+        "200":
+          description: reservation response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reservation'
+        "400":
+          description: Bad input parameter      
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+  /reservations/{reservationId}:
+    get:
+      tags:
+      - reservation
+      description: |
+        FR10: The logged in user must be able to view his reservations.
+      operationId: viewAReservation
+      parameters:
+      - name: reservationId
+        in: path
+        description: ReservationId of the reservation submitted to the system
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      - name: userId
+        in: query
+        description: UserId of the logged in user that made the reservation
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      responses:
+        "200":
+          description: Reservation information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reservation'
+        "400":
+          description: Bad input parameter
+        "404":
+          description: Reservation not found
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+    put:
+      tags:
+      - reservation
+      summary: Modifies a single reservation based on the reservationId supplied
+      description: |
+        FR7 - The logged-in user must be able to modify his reservation
+      operationId: modifyReservation
+      parameters:
+      - name: userId
+        in: query
+        description: Retrieve the ID of the user
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      - name: reservationId
+        in: path
+        description: ID of the reservation to modify
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        description: "Reservation to be modified (numberOfPeople, date, time)"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reservation'
+        required: true
+      responses:
+        "200":
+          description: "Updated reservation (numberOfPeople, date, time)"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reservation'
+                x-content-type: application/json
+        "400":
+          description: Bad input parameter
+        "404":
+          description: Reservation not found
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+    delete:
+      tags:
+      - reservation
+      summary: Deletes a single reservation based on the reservationID supplied
+      description: |
+        FR8 - The logged in user must be able to cancel his existing reservation
+      operationId: deleteReservation
+      parameters:
+      - name: userId
+        in: query
+        description: Retrieve the ID of the user
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      - name: reservationId
+        in: path
+        description: ID of reservation to delete
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      responses:
+        "200":
+          description: Reservation deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reservation deleted.'
+        "400":
+          description: Bad input parameter
+        "404":
+          description: Reservation not found
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+  /reservations/{reservationId}/notification:
+    get:
+      description: "FR9: The system must be able to notify the logged in user for\
+        \ his reservation at the reservation date."
+      operationId: notifyUser
+      parameters:
+      - name: userId
+        in: query
+        description: Retrieve the ID of the user
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      - name: reservationId
+        in: path
+        description: Retrieve the ID of the reservation
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      responses:
+        "200":
+          description: Notification send successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/You have a reservation in 2 hours'
+        "400":
+          description: Bad input parameter
+        "404":
+          description: Reservation not found
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+  /business-reservations:
+    get:
+      tags:
+      - business-reservation
+      description: |
+        FR11: The business owner must be able to view the reservations of his business.
+      operationId: viewBusinessReservations
+      parameters:
+      - name: ownerId
+        in: query
+        description: OwnerId of the business owner
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      - name: businessId
+        in: query
+        description: BusinessId of the business that the reservations were made in
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      - name: day
+        in: query
+        description: Reservation day
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 31
+      - name: month
+        in: query
+        description: Reservation month
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 12
+      - name: year
+        in: query
+        description: Reservation year
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          minimum: 2024
+      responses:
+        "200":
+          description: An array with the reservations made in the business of the
+            business owner for that specific date
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessReservation'
+                x-content-type: application/json
+        "400":
+          description: Bad input parameter
+        "404":
+          description: Business Reservations not found        
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+  /business-statistics:
+    get:
+      tags:
+      - business-statistics
+      description: |
+        FR12: The business owner must be able to view the statistics of his business reservations.
+      operationId: viewBusinessStatistics
+      parameters:
+      - name: businessId
+        in: query
+        description: BusinessId of the business that the reservations were made in
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      - name: ownerId
+        in: query
+        description: OwnerId of the business owner of the business that the reservations
+          were made in.
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+      responses:
+        "200":
+          description: A schematic with the statistics of the reservations made in
+            the business of the business owner
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessStatistics'
+                x-content-type: application/json    
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Default
+components:
+  schemas:
+    Business:
+      title: Business
+      required:
+      - businessId
+      - categoryName
+      - businessName
+      - keyword
+      - ownerId
+      type: object
+      properties:
+        businessId:
+          type: integer
+          description: The unique id of the business
+          format: int32
+          minimum: 0
+        businessName:
+          type: string
+        categoryName:
+          type: string
+          description: The categories that the businesses are divided into
+          enum:
+          - Breakfast
+          - Brunch
+          - Lunch
+          - Dinner
+          - Drinks
+        ownerId:
+          type: integer
+          description: The unique id of the business owner
+          format: int32
+          minimum: 0
+        keyword:
+          type: string
+          description: "The keyword that the business can be found with, during the\
+            \ search procedure"
+      example:
+        ownerId: 6
+        businessName: businessName
+        categoryName: breakfast
+        keyword: keyword
+        businessId: 0
+    Reservation:
+      title: Reservation
+      required:
+      - businessId
+      - businessName
+      - numberOfPeople
+      - reservationId
+      - reservationDay
+      - reservationMonth
+      - reservationTime
+      - reservationYear
+      - userId
+      - username
+      type: object
+      properties:
+        reservationId:
+          type: integer
+          description: The unique id of the reservation
+          format: int32
+          minimum: 0
+        userId:
+          type: integer
+          description: The unique id of the user
+          format: int32
+          minimum: 0
+        businessId:
+          type: integer
+          description: The unique id of the business
+          format: int32
+          minimum: 0
+        reservationTime:
+          type: string
+          description: >
+              Time of the reservation in 24-hour format.
+              Accepted format: HH:mm (e.g., "14:30")
+          pattern: '^([0-1][0-9]|2[0-3]):[0-5][0-9]$'
+        reservationDay:
+          type: integer
+          description: The arranged reservation day
+          format: int32
+          minimum: 1
+          maximum: 31
+        reservationMonth:
+          type: integer
+          description: The arranged reservation month
+          format: int32
+          minimum: 1
+          maximum: 12
+        reservationYear:
+          type: integer
+          description: The arranged reservation year
+          format: int32
+          minimum: 2024
+        numberOfPeople:
+          type: integer
+          description: The arranged number of people that will be in the reservation
+          format: int32
+          minimum: 1
+          maximum: 100
+        username:
+          type: string
+          description: The username of the person creating the reservation
+        businessName:
+          type: string
+          description: The name of the business for which this specific reservation
+            was made
+      example:
+        reservationId: 0
+        userId: 6
+        reservationTime: '12:00'
+        businessName: businessName
+        reservationYear: 2025
+        reservationDay: 5
+        businessId: 1
+        reservationMonth: 5
+        numberOfPeople: 7
+        username: username
+    BusinessReservation:
+      title: BusinessReservation
+      required:
+      - businessName
+      - numberOfPeople
+      - reservationId
+      - reservationDay
+      - reservationMonth
+      - reservationTime
+      - reservationYear
+      - userId
+      - username
+      - ownerId
+      - businessId
+      type: object
+      properties:
+        ownerId:
+          type: integer
+          description: The unique id of the business owner
+          format: int32
+          minimum: 0
+        businessId:
+          type: integer
+          description: The unique id of the business
+          format: int32
+          minimum: 0
+        reservationId:
+          type: integer
+          description: The unique id of the reservation
+          format: int32
+          minimum: 0
+        userId:
+          type: integer
+          description: The unique id of the user
+          format: int32
+          minimum: 0
+        reservationTime:
+          type: string
+          description: >
+              Time of the reservation in 24-hour format.
+              Accepted format: HH:mm (e.g., "14:30")
+          pattern: '^([0-1][0-9]|2[0-3]):[0-5][0-9]$'
+        reservationDay:
+          type: integer
+          description: The arranged reservation day
+          format: int32
+          minimum: 1
+          maximum: 31
+        reservationMonth:
+          type: integer
+          description: The arranged reservation month
+          format: int32
+          minimum: 1
+          maximum: 12
+        reservationYear:
+          type: integer
+          description: The arranged reservation year
+          format: int32
+          minimum: 2024
+        people:
+          type: integer
+          description: The arranged number of people that will be in the reservation
+          format: int32
+          minimum: 1
+          maximum: 100
+        username:
+          type: string
+          description: The username of the person creating the reservation
+        businessName:
+          type: string
+          description: The name of the business for which this specific reservation
+            was made
+      example:
+        reservationId: 0
+        userId: 6
+        ownerId: 7
+        businessId: 8
+        reservationTime: '20:00'
+        businessName: businessName
+        reservationYear: 2026
+        reservationDay: 1
+        people: 2
+        reservationMonth: 5
+        username: username
+    BusinessStatistics:
+      title: BusinessStatistics
+      required:
+      - ownerId
+      - businessId
+      - month
+      - numberOfReservations
+      type: object
+      properties:
+        ownerId:
+          type: integer
+          description: The unique id of the business owner
+          format: int32
+          minimum: 0
+        businessId:
+          type: integer
+          description: The unique id of the business
+          format: int32
+          minimum: 0
+        month:
+          type: integer
+          description: The arranged reservation month
+          format: int32
+          minimum: 1
+          maximum: 12
+        numberOfReservations:
+          type: integer
+          description: The sum of the reservations made in a specific month
+          format: int32
+          minimum: 0
+      example:
+        month: 0
+        businessId: 8
+        numberOfReservations: 6
+        ownerId: 7
+    Error:
+      required:
+      - code
+      - message
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          minimum: 0
+        message:
+          type: string
+    inline_response_200:
+      type: object
+      properties:
+        availableHours:
+          type: array
+          items:
+            type: string
+            pattern: "^([0-1][0-9]|2[0-3]):[0-5][0-9]$"
+            example: [18:00, 20:00]
+      example:
+        availableHours:
+        - 18:00
+        - 20:00
+    Reservation deleted.:
+      title: Reservation deleted.
+      required:
+      - message
+      type: object
+      properties:
+        message:
+          type: string
+      example:
+        message: message
+    You have a reservation in 2 hours:
+      title: You have a reservation in 2 hours!
+      required:
+      - message
+      type: object
+      properties:
+        message:
+          type: string
+      example:
+        message: message
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic

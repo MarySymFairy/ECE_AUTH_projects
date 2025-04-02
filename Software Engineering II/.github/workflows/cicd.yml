@@ -1,0 +1,41 @@
+name: cicd
+
+on: push
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Download dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm start
+          wait-on: 'http://localhost:8080/docs' 
+          config-file: cypress.config.js
+
+  cd:
+    runs-on: ubuntu-latest
+    needs: ci
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Deploy to Render
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
