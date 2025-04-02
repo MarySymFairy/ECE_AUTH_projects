@@ -9,6 +9,7 @@ Electrical and Computer Engineering (ECE) project portfolio.
 ## 👩‍💻 Projects Overview
 | Subject | Project	| Semester | Tools |
 |---|----|----|---|
+| Electronics I | Various Tasks | 3rd | SPICE |
 | [Probabilities & Statistics](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Probabilities%20and%20Statistics) | Statistical Analysis	| 4th | SPSS |
 | [Low-level HW Digital Systems I](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Low-level%20HW%20Digital%20Systems%20I) | Custom Processor	| 7th | Verilog |
 | Data Analysis | Analysis of Excel Data	| 7th | MATLAB |
@@ -17,6 +18,7 @@ Electrical and Computer Engineering (ECE) project portfolio.
 | [Software Engineering I](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Software%20Engineering%20I) | Reservio	| 8th | StarUML, API |
 | [Software Engineering II](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Software%20Engineering%20II) | Reservio	| 9th | Javascript |
 | [Databases](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Databases) | NeuroSyncDB	| 9th | SQL |
+| Reliability | Bibliographic work & UPSat analysis in OMERE	| 9th | OMERE |
 
 
 
