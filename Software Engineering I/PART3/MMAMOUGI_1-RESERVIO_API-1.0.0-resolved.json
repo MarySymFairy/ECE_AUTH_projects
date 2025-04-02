@@ -1,0 +1,937 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RESERVIO API",
+    "description": "Software Engineering I Course Reservio API",
+    "contact": {},
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/MMAMOUGI_1/RESERVIO_API/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "security": [
+    {
+      "BasicAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "business",
+      "description": "Operations about Businesses"
+    },
+    {
+      "name": "reservation",
+      "description": "Operations about Reservations"
+    },
+    {
+      "name": "business-reservation",
+      "description": "Operations about Business Reservations (from the aspect of the business owner)"
+    },
+    {
+      "name": "business-statistics",
+      "description": "Operations about Business Statistics"
+    }
+  ],
+  "paths": {
+    "/businesses": {
+      "get": {
+        "description": "FR1: The logged in user must be able to view the businesses that are included in the system divided by categories.\n",
+        "operationId": "getBusinessesByCategory",
+        "parameters": [
+          {
+            "name": "category-name",
+            "in": "query",
+            "description": "The name of the category that the business belongs to.",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "breakfast",
+                "brunch",
+                "lunch",
+                "dinner",
+                "drinks"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of businesses in the specified category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Business"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/businesses/search": {
+      "get": {
+        "description": "FR2: The logged in user must be able to search for a business with a keyword. \n",
+        "operationId": "searchBusinessByKeyword",
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "description": "The keyword to search for businesses.",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of businesses matching the searched keyword",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Business"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reservations/availability": {
+      "get": {
+        "description": "In order to have the available hours for the specific reservation you want to create.\n FR3: The logged in user must be able to start a reservation process by selecting a business\n FR5: The logged in user must be able to select an available hour for his reservation.\n",
+        "operationId": "getAvailability",
+        "parameters": [
+          {
+            "name": "business-id",
+            "in": "query",
+            "description": "Business-id of the business that the reservation is made for",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "reservationDay",
+            "in": "query",
+            "description": "The arranged reservation day",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "reservationMonth",
+            "in": "query",
+            "description": "The arranged reservation month",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "reservationYear",
+            "in": "query",
+            "description": "The arranged reservation year",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "numberOfPeople",
+            "in": "query",
+            "description": "The arranged number of people that will be in the reservation",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of reservation hours matching the reservation details provided (business, date, people)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reservations": {
+      "get": {
+        "description": "FR10: The logged in user must be able to view his reservations.\n",
+        "operationId": "viewReservations",
+        "parameters": [
+          {
+            "name": "user-id",
+            "in": "query",
+            "description": "User-id of the logged in user that made the reservation",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An array with the reservations made by that logged in user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reservation"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "FR4: The logged in user must be able to set his reservation details in the selected business. FR6: The logged in user must be able to submit his reservation in the system. FR5: The logged in user must be able to select an available hour for his reservation.\n",
+        "operationId": "addReservation",
+        "parameters": [
+          {
+            "name": "user-id",
+            "in": "query",
+            "description": "User-id of the logged in user that made the reservation",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "business-id",
+            "in": "query",
+            "description": "Business-id of the business that the reservation is made for",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Submit reservation to the system",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Reservation"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "reservation response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reservation"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reservations/{reservation-id}": {
+      "get": {
+        "description": "FR10: The logged in user must be able to view his reservations.\n",
+        "operationId": "ViewAReservation",
+        "parameters": [
+          {
+            "name": "reservation-id",
+            "in": "path",
+            "description": "Reservation-id of the reservation submitted to the system",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "user-id",
+            "in": "query",
+            "description": "User-id of the logged in user that made the reservation",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reservation information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reservation"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Modifies a single reservation based on the reservation-id supplied",
+        "description": "FR7 - The logged-in user must be able to modify his reservation\n",
+        "operationId": "modifyReservation",
+        "parameters": [
+          {
+            "name": "user-id",
+            "in": "query",
+            "description": "Retrieve the ID of the user",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "reservation-id",
+            "in": "path",
+            "description": "ID of the reservation to modify",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Reservation to be modified (numberOfPeople, date, time)",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Reservation"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Updated reservation (numberOfPeople, date, time)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reservation"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes a single reservation based on the reservationID supplied",
+        "description": "FR8 - The logged in user must be able to cancel his existing reservation\n",
+        "operationId": "deleteReservation",
+        "parameters": [
+          {
+            "name": "user-id",
+            "in": "query",
+            "description": "Retrieve the ID of the user",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "reservation-id",
+            "in": "path",
+            "description": "ID of reservation to delete",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reservation deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "Reservation deleted."
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reservations/{reservation-id}/notification": {
+      "get": {
+        "description": "FR9: The system must be able to notify the logged in user for his reservation at the reservation date.",
+        "operationId": "notifyUser",
+        "parameters": [
+          {
+            "name": "user-id",
+            "in": "query",
+            "description": "Retrieve the ID of the user",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "reservation-id",
+            "in": "path",
+            "description": "Retrieve the ID of the reservation",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Notification send successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/You have a reservation in 2 hours"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/business-reservations": {
+      "get": {
+        "description": "FR11: The business owner must be able to view the reservations of his business.\n",
+        "operationId": "viewBusinessReservations",
+        "parameters": [
+          {
+            "name": "owner-id",
+            "in": "query",
+            "description": "Owner-id of the business owner",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "day",
+            "in": "query",
+            "description": "Reservation day",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "month",
+            "in": "query",
+            "description": "Reservation month",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "description": "Reservation year",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An array with the reservations made in the business of the business owner for that specific date",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BusinessReservation"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/business-statistics": {
+      "get": {
+        "description": "FR12: The business owner must be able to view the statistics of his business reservations.\n",
+        "operationId": "viewBusinessStatistics",
+        "parameters": [
+          {
+            "name": "owner-id",
+            "in": "query",
+            "description": "Owner-id of the business owner of the business that the reservations were made in.",
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A schematic with the statistics of the reservations made in the business of the business owner",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BusinessStatistics"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Business": {
+        "title": "Business",
+        "required": [
+          "business-id",
+          "businessCategory",
+          "businessName",
+          "keyword",
+          "owner-id"
+        ],
+        "type": "object",
+        "properties": {
+          "business-id": {
+            "type": "integer",
+            "description": "The unique id of the business",
+            "format": "int32"
+          },
+          "businessName": {
+            "type": "string"
+          },
+          "businessCategory": {
+            "type": "string",
+            "description": "The categories that the businesses are divided into",
+            "enum": [
+              "Breakfast",
+              "Brunch",
+              "Lunch",
+              "Dinner",
+              "Drinks"
+            ]
+          },
+          "owner-id": {
+            "type": "integer",
+            "description": "The unique id of the business owner",
+            "format": "int32"
+          },
+          "keyword": {
+            "type": "string",
+            "description": "The keyword that the business can be found with, during the search procedure"
+          }
+        }
+      },
+      "Reservation": {
+        "title": "Reservation",
+        "required": [
+          "business-id",
+          "businessName",
+          "numberOfPeople",
+          "reservation-id",
+          "reservationDay",
+          "reservationMonth",
+          "reservationTime",
+          "reservationYear",
+          "user-id",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "reservation-id": {
+            "type": "integer",
+            "description": "The unique id of the reservation",
+            "format": "int32"
+          },
+          "user-id": {
+            "type": "integer",
+            "description": "The unique id of the user",
+            "format": "int32"
+          },
+          "business-id": {
+            "type": "integer",
+            "description": "The unique id of the business",
+            "format": "int32"
+          },
+          "reservationTime": {
+            "type": "string",
+            "description": "The arranged time of the reservation",
+            "format": "time"
+          },
+          "reservationDay": {
+            "type": "integer",
+            "description": "The arranged reservation day",
+            "format": "int32"
+          },
+          "reservationMonth": {
+            "type": "integer",
+            "description": "The arranged reservation month",
+            "format": "int32"
+          },
+          "reservationYear": {
+            "type": "integer",
+            "description": "The arranged reservation year",
+            "format": "int32"
+          },
+          "numberOfPeople": {
+            "type": "integer",
+            "description": "The arranged number of people that will be in the reservation",
+            "format": "int32"
+          },
+          "username": {
+            "type": "string",
+            "description": "The username of the person creating the reservation"
+          },
+          "businessName": {
+            "type": "string",
+            "description": "The name of the business for which this specific reservation was made"
+          }
+        }
+      },
+      "BusinessReservation": {
+        "title": "BusinessReservation",
+        "required": [
+          "businessName",
+          "numberOfPeople",
+          "reservation-id",
+          "reservationDay",
+          "reservationMonth",
+          "reservationTime",
+          "reservationYear",
+          "user-id",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "reservation-id": {
+            "type": "integer",
+            "description": "The unique id of the reservation",
+            "format": "int32"
+          },
+          "user-id": {
+            "type": "integer",
+            "description": "The unique id of the user",
+            "format": "int32"
+          },
+          "reservationTime": {
+            "type": "string",
+            "description": "The arranged time of the reservation",
+            "format": "time"
+          },
+          "reservationDay": {
+            "type": "integer",
+            "description": "The arranged reservation day",
+            "format": "int32"
+          },
+          "reservationMonth": {
+            "type": "integer",
+            "description": "The arranged reservation month",
+            "format": "int32"
+          },
+          "reservationYear": {
+            "type": "integer",
+            "description": "The arranged reservation year",
+            "format": "int32"
+          },
+          "people": {
+            "type": "integer",
+            "description": "The arranged number of people that will be in the reservation",
+            "format": "int32"
+          },
+          "username": {
+            "type": "string",
+            "description": "The username of the person creating the reservation"
+          },
+          "businessName": {
+            "type": "string",
+            "description": "The name of the business for which this specific reservation was made"
+          }
+        }
+      },
+      "BusinessStatistics": {
+        "title": "BusinessStatistics",
+        "required": [
+          "month",
+          "numberOfReservations"
+        ],
+        "type": "object",
+        "properties": {
+          "month": {
+            "type": "integer",
+            "description": "The arranged reservation month",
+            "format": "int32"
+          },
+          "numberOfReservations": {
+            "type": "integer",
+            "description": "The sum of the reservations made in a specific month",
+            "format": "int32"
+          }
+        }
+      },
+      "Error": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200": {
+        "type": "object",
+        "properties": {
+          "availableHours": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "time",
+              "example": "18:00"
+            }
+          }
+        }
+      },
+      "Reservation deleted.": {
+        "title": "Reservation deleted.",
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "You have a reservation in 2 hours": {
+        "title": "You have a reservation in 2 hours!",
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  }
+}
