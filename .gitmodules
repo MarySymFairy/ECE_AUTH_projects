@@ -1,15 +1,1 @@
-[submodule "SoftEng2"]
-	path = SoftEng2
-	url = https://github.com/MarySymFairy/SEII-Reservio.git
-[submodule "DB_ece_auth_2024"]
-	path = DB_ece_auth_2024
-	url = https://github.com/MarySymFairy/DB_ece_auth_2024.git
-[submodule "HW1_ece_auth_2024"]
-	path = HW1_ece_auth_2024
-	url = https://github.com/MarySymFairy/HW1_ece_auth_2024.git
-[submodule "Probability_and_Statistics_ece_auth_2023"]
-	path = Probability_and_Statistics_ece_auth_2023
-	url = https://github.com/MarySymFairy/Probability_and_Statistics_ece_auth_2023.git
-[submodule "Software_Engineering_I"]
-	path = Software_Engineering_I
-	url = https://github.com/MarySymFairy/SoftEng1_ece_auth_2024.git
+
