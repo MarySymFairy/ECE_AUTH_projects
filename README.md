@@ -1,4 +1,6 @@
-# Electrical and Computer Engineering Projects
+# Electrical and Computer Engineering Projects 
+# <img height="100" width="250" alt="AUTH LOGO" src="https://www.sadas-pea.gr/wp-content/uploads/2015/03/ceb1cf80ceb8_2-1200x0-c-default.jpg" />
+
 
 ## 🎓 About This Repository
 
