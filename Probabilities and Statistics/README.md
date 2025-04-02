@@ -1,7 +1,7 @@
-# Probability and Statistics:
+# Probabilities and Statistics:
 
 ### Overview
-This project was developed as part of the Statistics assignment for the Electrical and Computer Engineering course in the 4th semester. 
+This project was developed as part of the Statistics assignment for the Electrical and Computer Engineering course of the 4th semester, in 2023. 
 
 
 
