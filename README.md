@@ -9,7 +9,6 @@ Electrical and Computer Engineering (ECE) project portfolio.
 ## 👩‍💻 Projects Overview
 | Subject | Project	| Semester | Tools |
 |---|----|----|---|
-| Electronics I | Various Tasks | 3rd | SPICE |
 | [Probabilities & Statistics](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Probabilities%20and%20Statistics) | Statistical Analysis	| 4th | SPSS |
 | [Low-level HW Digital Systems I](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Low-level%20HW%20Digital%20Systems%20I) | Custom Processor	| 7th | Verilog |
 | [Data Analysis](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Data%20Analysis) | Analysis of Excel Data	| 7th | MATLAB |
