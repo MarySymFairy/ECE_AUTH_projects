@@ -27,8 +27,8 @@
 // BMP280 uses I2C protocol & default GPIO21 and 22 for SDA SCL
 
 // Replace with your network credentials
-const char* ssid = "monkeyHouse";
-const char* password = "Par521252123!@#";
+const char* ssid = "putyourSSIDhere";
+const char* password = "putyourPASSWORDhere";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
