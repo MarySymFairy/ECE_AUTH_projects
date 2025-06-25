@@ -19,7 +19,7 @@ Electrical and Computer Engineering (ECE) project portfolio.
 | [Software Engineering II](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Software%20Engineering%20II) | Reservio	| 9th | JavaScript |
 | [Databases](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Databases) | NeuroSyncDB	| 9th | SQL |
 | [Systems Reliability](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Systems%20Reliability) | Bibliographic work & UPSat analysis in OMERE	| 9th | OMERE |
-| Distributed Production | Smart Weather Station with ESP32 and Sensors | 10th | Arduino, HTML, JavaScript |
+| [Distributed Production](https://github.com/MarySymFairy/ECE_AUTH_projects/tree/main/Distributed%20Production) | Smart Weather Station with ESP32 and Sensors | 10th | Arduino, HTML, JavaScript |
 
 
 ## 📁 Repository Structure 
