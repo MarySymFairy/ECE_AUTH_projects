@@ -1,4 +1,4 @@
-# Distributed Production
+# Distributed Generation
 # Smart Weather Station with ESP32 and Sensors
 
 ## 10th Semester, Aristotle University of Thessaloniki, 2024
@@ -91,7 +91,7 @@ A complete real-time environmental monitoring system using the ESP32 microcontro
 
 ## 🎓 Academic Info
 
-- 📚 Course: *Distributed Production*  
+- 📚 Course: *Distributed Generation*  
 - 🧑‍💻 Students: Maria Mamougiouri (10533), Aimilia Xakoustou (10324)
 
 📎 [Presentation (PDF)](Smart-Weather-Station-with-ESP32-and-Sensors.pdf)  
