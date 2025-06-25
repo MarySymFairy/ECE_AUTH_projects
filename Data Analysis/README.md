@@ -12,12 +12,6 @@
 ## Overview  
 This project analyzes hourly bicycle rental data from the Seoul Bike Sharing System using MATLAB. The objective is to explore seasonal trends, probability distributions, hypothesis testing, correlation analysis, and regression modeling.  
 
-## Submission Guidelines  
-📌 **File Format**: Submit only MATLAB `.m` files in a compressed folder.  
-📌 **Naming Convention**: Follow the required script and function names (e.g., `Group10Exe5Prog1.m`).  
-📌 **Language**: Explanations must be in English or Greeklish.  
-📌 **Plagiarism Warning**: Similar projects will receive the same grade.  
-📌 **Presentation**: Some teams may be asked to present their results via Zoom.  
 
 ## Tasks  
 
